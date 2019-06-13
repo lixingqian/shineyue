@@ -1,5 +1,6 @@
 package com.shineyue.cn.controller;
 
+import com.shineyue.cn.model.Student;
 import com.shineyue.cn.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,6 @@ public class StudentController {
     }
     @RequestMapping("getAll")
     public List getAll(){
-        return new ArrayList<>(studentService.listAll());
+        return new ArrayList<Student>(studentService.listAll());
     }
 }
