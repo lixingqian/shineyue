@@ -27,3 +27,4 @@ public class StudentController {
         return new ArrayList<Student>(studentService.listAll());
     }
 }
+
