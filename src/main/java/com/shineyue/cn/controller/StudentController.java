@@ -26,5 +26,10 @@ public class StudentController {
     public List getAll(){
         return new ArrayList<Student>(studentService.listAll());
     }
+
+
+    public  String show(){
+        return "曾智平";
+    }
 }
 
