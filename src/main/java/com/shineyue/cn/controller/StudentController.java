@@ -19,7 +19,7 @@ public class StudentController {
     private StudentService studentService;
     @RequestMapping("hello")
     public String hello(){
-        System.out.println(12346);
+        System.out.println("您已进入该方法中!");
         return "hello, spring boot，lixingqian";
     }
     @RequestMapping("getAll")
