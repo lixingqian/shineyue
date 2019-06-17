@@ -29,7 +29,7 @@ public class StudentController {
 
 
     public  String show(){
-        return "曾智平";
+        return "曾智平测试提交";
     }
 }
 
