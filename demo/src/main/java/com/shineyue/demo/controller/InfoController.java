@@ -12,6 +12,6 @@ public class InfoController {
 
     @GetMapping("info")
     public String test(){
-        return "hello idea";
+        return "hello idea，hello idea";
     }
 }
