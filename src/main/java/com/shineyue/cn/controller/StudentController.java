@@ -20,7 +20,7 @@ public class StudentController {
     @RequestMapping("hello")
     public String hello(){
         System.out.println(12346);
-        return "hello, spring boot";
+        return "hello, spring boot，lixingqian";
     }
     @RequestMapping("getAll")
     public List getAll(){
