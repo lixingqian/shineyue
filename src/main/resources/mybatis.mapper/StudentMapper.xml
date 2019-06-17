@@ -6,6 +6,10 @@
         <result property="name" column="g_name"/>
         <result property="age" column="g_age"/>
         <result property="sex" column="g_sex"/>
+        <association property="team" javaType="com.shineyue.cn.model.Team">
+            <id property="g_id" column="g_team"></id>
+            <result property="g_name" column="s_name"/>
+        </association>
     </resultMap>
 
     <select id="listAll" resultMap="studentMap">
