@@ -103,4 +103,7 @@
       t_status = #{t_status,jdbcType=SMALLINT}
     where t_id = #{t_id,jdbcType=VARCHAR}
   </update>
+  <select id="selectStudent" resultMap="BaseResultMap">
+    select * from t_student
+  </select>
 </mapper>
