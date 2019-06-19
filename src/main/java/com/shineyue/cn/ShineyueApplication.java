@@ -19,7 +19,7 @@ public class ShineyueApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ShineyueApplication.class, args);
-        System.out.println("pringboot 启动成功");
+        System.out.println("pringboot 启动成功 测试开始");
 
     }
 
