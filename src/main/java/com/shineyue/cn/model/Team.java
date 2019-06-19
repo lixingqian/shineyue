@@ -20,7 +20,9 @@ public class Team {
     /**
      * 班级学生
      */
-    private List<Student> studentList = new ArrayList<>();
+    private Student student;
+//    private List<Student> studentList = new ArrayList<>();
+
 
     public String getName() {
         return name;
@@ -30,13 +32,13 @@ public class Team {
         this.name = name;
     }
 
-    public List<Student> getStudentList() {
+   /* public List<Student> getStudentList() {
         return studentList;
     }
 
     public void setStudentList(List<Student> studentList) {
         this.studentList = studentList;
-    }
+    }*/
 
     public String getId() {
         return id;
@@ -44,5 +46,13 @@ public class Team {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 }
