@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry location="C:\Users\HUAWEI\.m2\repository\org\postgresql\postgresql\42.2.5\postgresql-42.2.5.jar"/>
+    <context id="context1" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+            <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        </commentGenerator>
+
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://127.0.0.1:5432/shineyue?useUnicode=true&amp;characterEncoding=utf-8"
+                        userId="postgres" password="123456"
+        />
+        <!--生成实体-->
+        <javaModelGenerator targetPackage="com.shineyue.cn.model"
+                            targetProject="C:\Users\HUAWEI\Desktop\shineyue\Demo02\src\main\java"/>
+        <!--生成xml sql文件-->
+        <sqlMapGenerator targetPackage="mybatis\mapper"
+                         targetProject="C:\Users\HUAWEI\Desktop\shineyue\Demo02\src\main\resources\"/>
+        <!--生成接口-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.shineyue.cn.mapper"
+                             targetProject="C:\Users\HUAWEI\Desktop\shineyue\Demo02\src\main\java"/>
+        <!-- shema 数据库 tableName表名 -->
+        <table tableName="t_student" domainObjectName="Student"></table>
+    </context>
+</generatorConfiguration>

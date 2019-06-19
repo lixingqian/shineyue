@@ -1,66 +1,95 @@
 package com.shineyue.cn.model;
 
-
 /**
- * @author  yanji
+ * @author xiaobin
  */
 public class Student {
-    /**
-     * id
-     */
-    private String id;
-    /**
-     * 姓名
-     */
-    private String name;
-    /**
-     * 年龄
-     */
-    private Integer age;
-    /**
-     * 性别
-     */
-    private Integer sex;
+    private String gId;
 
-    public String getId() {
-        return id;
+    private String gName;
+
+    private Short gAge;
+
+    private String gSex;
+
+    private String gTeamId;
+
+    private Short gType;
+
+    public Student() {
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public Student(String gName, Short gAge, String gSex, String gTeamId) {
+        this.gName = gName;
+        this.gAge = gAge;
+        this.gSex = gSex;
+        this.gTeamId = gTeamId;
     }
 
-    public String getName() {
-        return name;
+    public Student(String gId, String gName, Short gAge, String gSex, String gTeamId, Short gType) {
+        this.gId = gId;
+        this.gName = gName;
+        this.gAge = gAge;
+        this.gSex = gSex;
+        this.gTeamId = gTeamId;
+        this.gType = gType;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getgId() {
+        return gId;
     }
 
-    public Integer getAge() {
-        return age;
+    public void setgId(String gId) {
+        this.gId = gId;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public String getgName() {
+        return gName;
     }
 
-    public Integer getSex() {
-        return sex;
+    public void setgName(String gName) {
+        this.gName = gName;
     }
 
-    public void setSex(Integer sex) {
-        this.sex = sex;
+    public Short getgAge() {
+        return gAge;
+    }
+
+    public void setgAge(Short gAge) {
+        this.gAge = gAge;
+    }
+
+    public String getgSex() {
+        return gSex;
+    }
+
+    public void setgSex(String gSex) {
+        this.gSex = gSex;
+    }
+
+    public String getgTeamId() {
+        return gTeamId;
+    }
+
+    public void setgTeamId(String gTeamId) {
+        this.gTeamId = gTeamId;
+    }
+
+    public Short getgType() {
+        return gType;
+    }
+
+    public void setgType(Short gType) {
+        this.gType = gType;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", sex=" + sex +
+                "gId='" + gId + '\'' +
+                ", gName='" + gName + '\'' +
+                ", gAge=" + gAge +
+                ", gSex='" + gSex + '\'' +
                 '}';
     }
 }
