@@ -21,4 +21,9 @@ public class TeamController {
 
    return teamService.biglist();
     }
+
+
+    public void test(){
+        String name="曾智平";
+    }
 }
