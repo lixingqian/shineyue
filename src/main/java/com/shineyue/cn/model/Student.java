@@ -20,7 +20,24 @@ public class Student {
     /**
      * 性别
      */
-    private Integer sex;
+    private String sex;
+
+    /**
+     *所属班级
+     */
+   private  String teamId;
+    /**
+     * 删除学生（逻辑删除）
+     */
+   private  int status;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public String getId() {
         return id;
@@ -46,12 +63,20 @@ public class Student {
         this.age = age;
     }
 
-    public Integer getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(Integer sex) {
+    public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public String getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
     }
 
     @Override
@@ -61,6 +86,8 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", sex=" + sex +
+                ", teamId='" + teamId + '\'' +
+                ", status=" + status +
                 '}';
     }
 }

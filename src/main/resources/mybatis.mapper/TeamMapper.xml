@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shineyue.cn.mapper.TeamMapper">
+    <resultMap id="teamMap" type="com.shineyue.cn.model.Team">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <collection property="student" ofType="com.shineyue.cn.model.Student" column="g_team_id">
+            <!-- 定义这个集合中元素的封装规则 -->
+            <id property="id" column="g_id"/>
+            <result property="name" column="g_name"/>
+            <result property="age" column="g_age"/>
+            <result property="sex" column="g_sex"/>
+            <result property="teamId" column="g_team_id"/>
+        </collection>
+
+    </resultMap>
+
+    <select id="listAll" resultMap="teamMap">
+         select t.g_id as id ,t.g_name as name,s.*
+			from t_student s LEFT JOIN t_team t on s.g_team_id=t.g_id
+    </select>
+
+
+</mapper>

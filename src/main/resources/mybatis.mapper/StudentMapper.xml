@@ -6,11 +6,44 @@
         <result property="name" column="g_name"/>
         <result property="age" column="g_age"/>
         <result property="sex" column="g_sex"/>
+        <result property="teamId" column="g_team_id"/>
+        <result property="status" column="g_status"/>
     </resultMap>
 
-    <select id="listAll" resultMap="studentMap">
-          select * from t_student
+    <select id="listAll" resultMap="studentMap" parameterType="String">
+          select s.* from t_student s where g_team_id=#{teamId} and g_status=0
     </select>
 
+    <insert id="addStudent" parameterType="com.shineyue.cn.model.Student">
+        insert  into t_student(g_id,g_name,g_age,g_sex,g_team_id)
+        values (
+        #{id}, #{name}, #{age}, #{sex} ,#{teamId}
+        )
+
+    </insert>
+
+    <update id="updateStudent" parameterType="com.shineyue.cn.model.Student">
+        update  t_student set
+        <!--<if test="#{name} != null and #{name} !=''">
+            g_name=#{name},
+        </if>-->
+        g_name=#{name},  g_age=#{age} ,g_sex=#{sex},g_team_id=#{teamId},g_status=#{status}
+             where g_id=#{id}
+
+    </update>
+
+<update id="delStudent" >
+     update  t_student set
+     g_status=#{status}
+      where g_id=#{id}
+</update>
+
+
+    <select id="findById" parameterType="String" resultMap="studentMap">
+        select * from t_student
+        where
+        g_id=#{id}
+
+    </select>
 
 </mapper>

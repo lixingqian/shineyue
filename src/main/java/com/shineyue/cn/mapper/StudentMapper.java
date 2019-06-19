@@ -11,8 +11,39 @@ import java.util.List;
 @Mapper
 public interface StudentMapper {
     /**
-     * 获取所有学生信息
-     * @return list
+     * 通过班级id查询
+     * @param teamId
+     * @return
      */
-    List<Student> listAll();
+    List<Student> listAll(String teamId);
+
+    /**
+     * 增加学生信息
+     * @param student
+     * @return
+     */
+    Integer addStudent(Student student);
+
+    /**
+     * 修改学生信息
+     * @param student
+     * @return
+     */
+    Integer updateStudent(Student student);
+
+    /**
+     * 删除id
+     * @param id
+     * @param status
+     * @return
+     */
+    Integer delStudent(String id,int status );
+
+    /**
+     * 通过id查找
+     * @param id
+     * @return
+     */
+    Student findById(String id);
+
 }
