@@ -8,6 +8,8 @@ import com.shineyue.cn.service.TestMybatisService;
 import javafx.scene.shape.Circle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
@@ -36,7 +38,7 @@ public class TestMybatisServiceImpl  implements  TestMybatisService {
         List <TStudent> list=tStudentMapper.selectByExample(tStudentExample);
         return list;
     }
-
+    @Transactional(propagation= Propagation.REQUIRED)
     @Override
     public String updateByExample(TStudent tStudent) {
         TStudentExample tStudentExample=new TStudentExample();
