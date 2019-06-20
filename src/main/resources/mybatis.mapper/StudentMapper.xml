@@ -24,9 +24,7 @@
 
     <update id="updateStudent" parameterType="com.shineyue.cn.model.Student">
         update  t_student set
-        <!--<if test="#{name} != null and #{name} !=''">
-            g_name=#{name},
-        </if>-->
+
         g_name=#{name},  g_age=#{age} ,g_sex=#{sex},g_team_id=#{teamId},g_status=#{status}
              where g_id=#{id}
 

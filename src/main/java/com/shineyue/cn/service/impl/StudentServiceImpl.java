@@ -37,7 +37,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String addStudent(Student student) {
-        Integer index=studentMapper.addStudent(student);
+        //暂时不使用
+        //Integer index=studentMapper.addStudent(student);
+        int index=studentMapper.insertByAnnotation(student);
         if(index >0){
             return "增加成功";
         }
@@ -46,7 +48,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String updateStudent(Student student) {
-        Integer i=studentMapper.updateStudent(student);
+       // Integer i=studentMapper.updateStudent(student);
+        int i=studentMapper.updateByAnnotation(student);
         if(i>0){
             return "修改成功";
         }
@@ -55,7 +58,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String delStudent(String id) {
-        Integer i=studentMapper.delStudent(id,1);
+        //Integer i=studentMapper.delStudent(id,1);
+        int i=studentMapper.delByAnnotation(id);
         if(i>0){
             return "删除成功";
         }
@@ -64,6 +68,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student findById(String id){
+
         return studentMapper.findById(id);
     }
 
