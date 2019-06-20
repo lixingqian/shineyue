@@ -21,7 +21,7 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public List<Team> biglist() {
 
-        return TeamMapper.biglist();
+        return null;
     }
 }
 
