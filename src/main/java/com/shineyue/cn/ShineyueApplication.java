@@ -1,5 +1,6 @@
 package com.shineyue.cn;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author YanJI
  */
 @SpringBootApplication
+@MapperScan("com.shineyue.cn.mapper")
 //@ComponentScan(value="com.shineyue.cn",useDefaultFilters = true)//加载@Service @Control注解类
 //@MapperScan(value = "com.shinyue.cn.mapper")  //mybatis 需要扫描mapper接口 dao层
 //@EnableWebMvc                   //启用mvc

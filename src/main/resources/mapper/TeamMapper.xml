@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shineyue.cn.mapper.TeamMapper" >
+  <resultMap id="BaseResultMap" type="com.shineyue.cn.model.Team" >
+    <id column="g_id" property="gId" jdbcType="VARCHAR" />
+    <result column="g_name" property="gName" jdbcType="VARCHAR" />
+    <result column="g_status" property="gStatus" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    g_id, g_name, g_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_team
+    where g_id = #{gId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_team
+    where g_id = #{gId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.shineyue.cn.model.Team" >
+    insert into t_team (g_id, g_name, g_status
+      )
+    values (#{gId,jdbcType=VARCHAR}, #{gName,jdbcType=VARCHAR}, #{gStatus,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shineyue.cn.model.Team" >
+    insert into t_team
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gId != null" >
+        g_id,
+      </if>
+      <if test="gName != null" >
+        g_name,
+      </if>
+      <if test="gStatus != null" >
+        g_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gId != null" >
+        #{gId,jdbcType=VARCHAR},
+      </if>
+      <if test="gName != null" >
+        #{gName,jdbcType=VARCHAR},
+      </if>
+      <if test="gStatus != null" >
+        #{gStatus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shineyue.cn.model.Team" >
+    update t_team
+    <set >
+      <if test="gName != null" >
+        g_name = #{gName,jdbcType=VARCHAR},
+      </if>
+      <if test="gStatus != null" >
+        g_status = #{gStatus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where g_id = #{gId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shineyue.cn.model.Team" >
+    update t_team
+    set g_name = #{gName,jdbcType=VARCHAR},
+      g_status = #{gStatus,jdbcType=VARCHAR}
+    where g_id = #{gId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -6,10 +6,6 @@ import java.util.List;
 /**
  * @author YanJI
  */
-public interface StudentService {
-    /**
-     * 获取所有学生信息
-     * @return list
-     */
-    List<Student> listAll();
+public interface StudentService extends BaseService<Student>{
+
 }

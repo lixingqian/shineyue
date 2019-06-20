@@ -7,10 +7,5 @@ import java.util.List;
 /**
  * @author YanJI
  */
-public interface TeamService {
-    /**
-     * 获取所有班级以及人员
-     * @return
-     */
-    List<Team> getAllTeamAndPerson();
+public interface TeamService extends BaseService<Team>{
 }

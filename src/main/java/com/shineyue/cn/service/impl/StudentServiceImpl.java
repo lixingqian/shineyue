@@ -14,10 +14,61 @@ import java.util.List;
  */
 @Service
 public class StudentServiceImpl implements StudentService {
-    @Autowired
+
+    @Resource
     private StudentMapper studentMapper;
+
+    /**
+     * 增加
+     *
+     * @param student
+     * @return Integer
+     */
     @Override
-    public List<Student> listAll() {
-        return studentMapper.listAll();
+    public Integer add(Student student) {
+        return studentMapper.insertSelective(student);
+    }
+
+    /**
+     * 删除
+     *
+     * @param id
+     * @return Integer
+     */
+    @Override
+    public Integer delete(String id) {
+        return studentMapper.deleteByPrimaryKey(id);
+    }
+
+    /**
+     * 修改
+     *
+     * @param student
+     * @return Integer
+     */
+    @Override
+    public Integer update(Student student) {
+        return studentMapper.updateByPrimaryKeySelective(student);
+    }
+
+    /**
+     * 根据ID查询
+     *
+     * @param id
+     * @return Integer
+     */
+    @Override
+    public Student selectById(String id) {
+        return studentMapper.selectByPrimaryKey(id);
+    }
+
+    /**
+     * 查询所有
+     *
+     * @return List
+     */
+    @Override
+    public List<Student> selectAll() {
+        return studentMapper.selectAll();
     }
 }

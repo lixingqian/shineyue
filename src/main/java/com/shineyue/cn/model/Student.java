@@ -1,66 +1,63 @@
 package com.shineyue.cn.model;
 
-
-/**
- * @author  yanji
- */
 public class Student {
-    /**
-     * id
-     */
-    private String id;
-    /**
-     * 姓名
-     */
-    private String name;
-    /**
-     * 年龄
-     */
-    private Integer age;
-    /**
-     * 性别
-     */
-    private Integer sex;
+    private String gId;
 
-    public String getId() {
-        return id;
+    private String gName;
+
+    private Short gAge;
+
+    private String gSex;
+
+    private String gTeamId;
+
+    private Short gStatus;
+
+    public String getgId() {
+        return gId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setgId(String gId) {
+        this.gId = gId == null ? null : gId.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getgName() {
+        return gName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setgName(String gName) {
+        this.gName = gName == null ? null : gName.trim();
     }
 
-    public Integer getAge() {
-        return age;
+    public Short getgAge() {
+        return gAge;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setgAge(Short gAge) {
+        this.gAge = gAge;
     }
 
-    public Integer getSex() {
-        return sex;
+    public String getgSex() {
+        return gSex;
     }
 
-    public void setSex(Integer sex) {
-        this.sex = sex;
+    public void setgSex(String gSex) {
+        this.gSex = gSex == null ? null : gSex.trim();
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", sex=" + sex +
-                '}';
+    public String getgTeamId() {
+        return gTeamId;
+    }
+
+    public void setgTeamId(String gTeamId) {
+        this.gTeamId = gTeamId == null ? null : gTeamId.trim();
+    }
+
+    public Short getgStatus() {
+        return gStatus;
+    }
+
+    public void setgStatus(Short gStatus) {
+        this.gStatus = gStatus;
     }
 }

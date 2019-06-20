@@ -15,11 +15,5 @@ import java.util.List;
 @RestController
 @RequestMapping("/team")
 public class TeamController {
-    @Autowired
-    private TeamService teamService;
-    @RequestMapping("/getAllTeamAndStudent")
-    public List<Team> getAllTeamAndStudent(){
-        return teamService.getAllTeamAndPerson();
-    }
 
 }

@@ -16,10 +16,57 @@ import java.util.List;
  */
 @Service
 public class TeamServiceImpl implements TeamService {
-    @Autowired
-    private TeamMapper mapper;
+    /**
+     * 增加
+     *
+     * @param team
+     * @return Integer
+     */
     @Override
-    public List<Team> getAllTeamAndPerson() {
-        return mapper.getAllTeamAndPerson();
+    public Integer add(Team team) {
+        return null;
+    }
+
+    /**
+     * 删除
+     *
+     * @param id
+     * @return Integer
+     */
+    @Override
+    public Integer delete(String id) {
+        return null;
+    }
+
+    /**
+     * 修改
+     *
+     * @param team
+     * @return Integer
+     */
+    @Override
+    public Integer update(Team team) {
+        return null;
+    }
+
+    /**
+     * 根据ID查询
+     *
+     * @param id
+     * @return Integer
+     */
+    @Override
+    public Team selectById(String id) {
+        return null;
+    }
+
+    /**
+     * 查询所有
+     *
+     * @return List
+     */
+    @Override
+    public List<Team> selectAll() {
+        return null;
     }
 }

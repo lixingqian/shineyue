@@ -1,18 +1,21 @@
 package com.shineyue.cn.mapper;
 
 import com.shineyue.cn.model.Student;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-/**
- * @author YanJI
- */
-@Mapper
 public interface StudentMapper {
-    /**
-     * 获取所有学生信息
-     * @return list
-     */
-    List<Student> listAll();
+    int deleteByPrimaryKey(String gId);
+
+    int insert(Student record);
+
+    int insertSelective(Student record);
+
+    Student selectByPrimaryKey(String gId);
+
+    int updateByPrimaryKeySelective(Student record);
+
+    int updateByPrimaryKey(Student record);
+
+    List<Student> selectAll();
 }

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shineyue.cn.mapper.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.shineyue.cn.model.Student" >
+    <id column="g_id" property="gId" jdbcType="VARCHAR" />
+    <result column="g_name" property="gName" jdbcType="VARCHAR" />
+    <result column="g_age" property="gAge" jdbcType="SMALLINT" />
+    <result column="g_sex" property="gSex" jdbcType="CHAR" />
+    <result column="g_team_id" property="gTeamId" jdbcType="VARCHAR" />
+    <result column="g_status" property="gStatus" jdbcType="SMALLINT" />
+  </resultMap>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * from t_student
+    <where>
+      g_status = '1'
+    </where>
+  </select>
+
+  <sql id="Base_Column_List" >
+    g_id, g_name, g_age, g_sex, g_team_id, g_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_student
+    where g_id = #{gId,jdbcType=VARCHAR} and g_status = '1'
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_student
+    where g_id = #{gId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.shineyue.cn.model.Student" >
+    insert into t_student (g_id, g_name, g_age, 
+      g_sex, g_team_id, g_status
+      )
+    values (#{gId,jdbcType=VARCHAR}, #{gName,jdbcType=VARCHAR}, #{gAge,jdbcType=SMALLINT}, 
+      #{gSex,jdbcType=CHAR}, #{gTeamId,jdbcType=VARCHAR}, #{gStatus,jdbcType=SMALLINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shineyue.cn.model.Student" >
+    insert into t_student
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gId != null" >
+        g_id,
+      </if>
+      <if test="gName != null" >
+        g_name,
+      </if>
+      <if test="gAge != null" >
+        g_age,
+      </if>
+      <if test="gSex != null" >
+        g_sex,
+      </if>
+      <if test="gTeamId != null" >
+        g_team_id,
+      </if>
+      <if test="gStatus != null" >
+        g_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gId != null" >
+        #{gId,jdbcType=VARCHAR},
+      </if>
+      <if test="gName != null" >
+        #{gName,jdbcType=VARCHAR},
+      </if>
+      <if test="gAge != null" >
+        #{gAge,jdbcType=SMALLINT},
+      </if>
+      <if test="gSex != null" >
+        #{gSex,jdbcType=CHAR},
+      </if>
+      <if test="gTeamId != null" >
+        #{gTeamId,jdbcType=VARCHAR},
+      </if>
+      <if test="gStatus != null" >
+        #{gStatus,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shineyue.cn.model.Student" >
+    update t_student
+    <set >
+      <if test="gName != null" >
+        g_name = #{gName,jdbcType=VARCHAR},
+      </if>
+      <if test="gAge != null" >
+        g_age = #{gAge,jdbcType=SMALLINT},
+      </if>
+      <if test="gSex != null" >
+        g_sex = #{gSex,jdbcType=CHAR},
+      </if>
+      <if test="gTeamId != null" >
+        g_team_id = #{gTeamId,jdbcType=VARCHAR},
+      </if>
+      <if test="gStatus != null" >
+        g_status = #{gStatus,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where g_id = #{gId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shineyue.cn.model.Student" >
+    update t_student
+    set g_name = #{gName,jdbcType=VARCHAR},
+      g_age = #{gAge,jdbcType=SMALLINT},
+      g_sex = #{gSex,jdbcType=CHAR},
+      g_team_id = #{gTeamId,jdbcType=VARCHAR},
+      g_status = #{gStatus,jdbcType=SMALLINT}
+    where g_id = #{gId,jdbcType=VARCHAR}
+  </update>
+</mapper>
