@@ -27,3 +27,8 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+/.gitignore
+/mvnw
+/mvnw.cmd
+/src/test/
+/.mvn/

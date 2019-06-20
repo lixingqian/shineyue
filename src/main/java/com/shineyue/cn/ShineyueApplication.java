@@ -17,5 +17,5 @@ public class ShineyueApplication {
         SpringApplication.run(ShineyueApplication.class, args);
         System.out.println("hello,springboot");
     }
-
+     改动了主配值
 }
